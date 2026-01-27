@@ -72,6 +72,45 @@ window.addEventListener('scroll', () => {
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-menu a');
 
+// Automatically set active nav link based on current page
+function setActiveNavLink() {
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.split('/').pop() || 'index.html';
+    
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        const linkPage = linkPath.split('/').pop();
+        
+        // Remove active class from all links first
+        link.classList.remove('active');
+        
+        // Check if this link matches the current page
+        if (linkPage === currentPage || 
+            (currentPage === '' && linkPage === 'index.html') ||
+            (currentPage === 'index.html' && linkPath === 'index.html')) {
+            link.classList.add('active');
+        }
+        
+        // Handle chapter pages for dropdown
+        if (currentPath.includes('/chapters/') && linkPath.includes('/chapters/')) {
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+                // Also highlight the parent dropdown
+                const dropdown = link.closest('.dropdown');
+                if (dropdown) {
+                    const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+                    if (dropdownToggle) {
+                        dropdownToggle.style.color = 'var(--accent-highlight)';
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Call on page load
+window.addEventListener('load', setActiveNavLink);
+
 function updateActiveNavLink() {
     let current = '';
     const scrollPosition = window.pageYOffset + 200;
@@ -86,7 +125,6 @@ function updateActiveNavLink() {
     });
     
     navLinks.forEach(link => {
-        link.style.color = '';
         if (link.getAttribute('href') === `#${current}`) {
             link.style.color = 'var(--accent-highlight)';
         }
@@ -172,6 +210,66 @@ function createScrollProgress() {
 }
 
 createScrollProgress();
+
+// ==================== BACK TO TOP BUTTON ====================
+function createBackToTopButton() {
+    const backToTop = document.createElement('button');
+    backToTop.id = 'backToTop';
+    backToTop.innerHTML = '↑';
+    backToTop.setAttribute('aria-label', 'Back to top');
+    backToTop.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--accent-highlight);
+        color: white;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 998;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    `;
+    
+    document.body.appendChild(backToTop);
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTop.style.opacity = '1';
+            backToTop.style.visibility = 'visible';
+        } else {
+            backToTop.style.opacity = '0';
+            backToTop.style.visibility = 'hidden';
+        }
+    });
+    
+    // Smooth scroll to top
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Hover effect
+    backToTop.addEventListener('mouseenter', () => {
+        backToTop.style.transform = 'scale(1.1) translateY(-5px)';
+        backToTop.style.boxShadow = '0 6px 20px rgba(52, 152, 219, 0.4)';
+    });
+    
+    backToTop.addEventListener('mouseleave', () => {
+        backToTop.style.transform = 'scale(1) translateY(0)';
+        backToTop.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
+    });
+}
+
+createBackToTopButton();
 
 // ==================== INTERSECTION OBSERVER FOR BETTER PERFORMANCE ====================
 const observerOptions = {
@@ -377,45 +475,122 @@ console.log('%cChúc bạn học tốt môn Triết! 📚', 'font-size: 16px; co
 // ==================== MOBILE MENU TOGGLE (IF NEEDED) ====================
 function createMobileMenu() {
     const navMenu = document.querySelector('.nav-menu');
+    const navbar = document.querySelector('.navbar');
     
-    // Check if screen is mobile
-    if (window.innerWidth <= 768) {
-        const hamburger = document.createElement('button');
-        hamburger.className = 'hamburger';
-        hamburger.innerHTML = '☰';
-        hamburger.style.cssText = `
-            display: block;
-            font-size: 2rem;
+    // Check if hamburger already exists
+    if (document.querySelector('.hamburger')) {
+        return;
+    }
+    
+    // Create hamburger button
+    const hamburger = document.createElement('button');
+    hamburger.className = 'hamburger';
+    hamburger.setAttribute('aria-label', 'Toggle menu');
+    hamburger.innerHTML = `
+        <span></span>
+        <span></span>
+        <span></span>
+    `;
+    
+    // Add styles for hamburger
+    const style = document.createElement('style');
+    style.textContent = `
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
             background: none;
             border: none;
-            color: var(--text-primary);
             cursor: pointer;
-        `;
-        
-        const navbar = document.querySelector('.navbar');
-        navbar.insertBefore(hamburger, navMenu);
-        
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-        
-        // Add mobile menu styles
-        if (navMenu.classList.contains('active')) {
-            navMenu.style.display = 'flex';
-        } else {
-            navMenu.style.display = 'none';
+            padding: 0.5rem;
+            z-index: 1001;
         }
-    }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Insert hamburger before nav menu
+    navbar.appendChild(hamburger);
+    
+    // Toggle menu on click
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+    });
+    
+    // Close menu when clicking a link
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 && 
+            !navMenu.contains(e.target) && 
+            !hamburger.contains(e.target) &&
+            navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 }
+
+// Initialize mobile menu on load
+window.addEventListener('load', createMobileMenu);
 
 // Handle window resize
 let resizeTimer;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-        // Reload on significant resize
-        if (window.innerWidth <= 768) {
+        // Reset menu state on resize
+        const navMenu = document.querySelector('.nav-menu');
+        const hamburger = document.querySelector('.hamburger');
+        
+        if (window.innerWidth > 768 && navMenu) {
+            navMenu.classList.remove('active');
+            if (hamburger) {
+                hamburger.classList.remove('active');
+            }
+            document.body.style.overflow = '';
+        }
+        
+        if (window.innerWidth <= 768 && !hamburger) {
             createMobileMenu();
         }
     }, 250);
 });
+

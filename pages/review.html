@@ -10,13 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
-        <span class="sun">☀️</span>
-        <span class="moon">🌙</span>
-    </button>
-
     <nav class="navbar">
-        <div class="nav-brand">Học Triết Hiệu Quả</div>
+        <a href="../index.html" class="nav-brand" style="text-decoration: none;">Học Triết Hiệu Quả</a>
         <ul class="nav-menu">
             <li><a href="../index.html">Trang chủ</a></li>
             <li><a href="intro.html">Giới thiệu</a></li>
@@ -34,8 +29,10 @@
             <li><a href="case-studies.html">Ví dụ</a></li>
             <li><a href="review.html" class="active">Ôn tập</a></li>
             <li><a href="conclusion.html">Kết luận</a></li>
-        </ul>
-    </nav>
+        </ul>        <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+            <span class="sun">☀️</span>
+            <span class="moon">🌙</span>
+        </button>    </nav>
 
     <section class="page-header highlight-header">
         <div class="container">
@@ -517,9 +514,39 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 MLN111 - Dự án Triết học. Được thực hiện với ❤️</p>
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-section">
+                    <h3>Về dự án</h3>
+                    <p>Dự án hướng dẫn học môn Triết học Mác-Lênin hiệu quả, giúp sinh viên nắm vững kiến thức và đạt điểm cao thông qua phương pháp học khoa học và ví dụ thực tiễn.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Nội dung chính</h3>
+                    <ul class="footer-links">
+                        <li><a href="intro.html">Giới thiệu dự án</a></li>
+                        <li><a href="../chapters/chuong1.html">Nội dung 4 chương</a></li>
+                        <li><a href="methods.html">Phương pháp học</a></li>
+                        <li><a href="exam-tips.html">Mẹo làm bài thi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Tài nguyên</h3>
+                    <ul class="footer-links">
+                        <li><a href="case-studies.html">Ví dụ thực tiễn</a></li>
+                        <li><a href="review.html">Câu hỏi ôn tập</a></li>
+                        <li><a href="conclusion.html">Kết luận</a></li>
+                        <li><a href="../index.html">Trang chủ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span class="footer-date">2026</span> MLN111 - Dự án Triết học Mác-Lênin</p>
+                <p class="footer-note">Được thực hiện với ❤️ nhằm giúp sinh viên học Triết một cách hiệu quả</p>
+                <p class="footer-credits"><strong>Môn học:</strong> Triết học Mác-Lênin | <strong>Mã học phần:</strong> MLN111</p>
+            </div>
         </div>
     </footer>
 

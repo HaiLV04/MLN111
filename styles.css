@@ -66,26 +66,24 @@ body {
 
 /* ==================== DARK MODE TOGGLE ==================== */
 .dark-mode-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background: var(--card-bg);
     border: 2px solid var(--border-color);
     cursor: pointer;
-    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     transition: var(--transition);
-    box-shadow: 0 4px 12px var(--shadow);
+    box-shadow: 0 2px 8px var(--shadow);
+    margin-left: 1.5rem;
 }
 
 .dark-mode-toggle:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px var(--shadow);
 }
 
 .dark-mode-toggle .sun {
@@ -130,12 +128,21 @@ body.dark-mode .navbar {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-primary);
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-brand:hover {
+    color: var(--accent-highlight);
+    transform: scale(1.05);
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
     gap: 2rem;
+    align-items: center;
 }
 
 .nav-menu a {
@@ -144,6 +151,7 @@ body.dark-mode .navbar {
     font-weight: 500;
     transition: var(--transition);
     position: relative;
+    padding: 0.5rem 0;
 }
 
 .nav-menu a::after {
@@ -159,10 +167,33 @@ body.dark-mode .navbar {
 
 .nav-menu a:hover {
     color: var(--accent-highlight);
+    transform: translateY(-2px);
 }
 
 .nav-menu a:hover::after {
     width: 100%;
+}
+
+/* Active Navigation State */
+.nav-menu a.active {
+    color: var(--accent-highlight);
+    font-weight: 600;
+}
+
+.nav-menu a.active::after {
+    width: 100%;
+    height: 3px;
+    background: var(--accent-highlight);
+}
+
+.nav-menu a.active::before {
+    content: '●';
+    position: absolute;
+    left: -15px;
+    color: var(--accent-highlight);
+    font-size: 0.6rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* ==================== CONTAINER ==================== */
@@ -173,8 +204,8 @@ body.dark-mode .navbar {
 }
 
 .section {
-    min-height: 100vh;
-    padding: var(--spacing-xl) 0;
+    min-height: auto;
+    padding: 5rem 0;
     display: flex;
     align-items: center;
 }
@@ -396,7 +427,7 @@ body.dark-mode .navbar {
     line-height: 1.6;
 }
 
-/* ==================== METHODS SECTION ==================== */
+/* ==================== METHODS PAGE ==================== */
 .methods-section {
     background: var(--bg-secondary);
 }
@@ -411,58 +442,99 @@ body.dark-mode .navbar {
     color: #27ae60;
 }
 
-.mistake-cards {
+.mistakes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: var(--spacing-lg);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .mistake-card {
     background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 12px;
+    padding: 2rem;
+    border-radius: 16px;
     border: 2px solid #e74c3c;
-    text-align: center;
     transition: var(--transition);
+    box-shadow: 0 4px 12px var(--shadow);
 }
 
 .mistake-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(231, 76, 60, 0.2);
 }
 
 .mistake-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.mistake-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 .mistake-card p {
-    color: var(--text-primary);
-    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
 }
 
-/* ==================== METHOD GRID ==================== */
-.method-grid {
+.mistake-card ul {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.mistake-card ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.mistake-card ul li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.fix-box {
+    background: rgba(46, 204, 113, 0.1);
+    border-left: 4px solid #2ecc71;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+}
+
+.fix-box strong {
+    color: #2ecc71;
+}
+
+/* Correct Methods */
+.correct-methods {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
-    margin-top: var(--spacing-md);
+    margin-top: 2rem;
 }
 
-.method-card {
+.method-block {
     background: var(--card-bg);
     padding: 2rem;
     border-radius: 16px;
     border: 2px solid var(--border-color);
     transition: var(--transition);
     position: relative;
+    box-shadow: 0 4px 12px var(--shadow);
 }
 
-.method-card:hover {
-    border-color: var(--accent-highlight);
+.method-block:hover {
+    border-color: #2ecc71;
     transform: translateY(-5px);
-    box-shadow: 0 12px 28px var(--shadow);
+    box-shadow: 0 8px 24px var(--shadow);
 }
 
 .method-number {
@@ -471,7 +543,7 @@ body.dark-mode .navbar {
     left: 20px;
     width: 50px;
     height: 50px;
-    background: var(--accent-highlight);
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -479,31 +551,96 @@ body.dark-mode .navbar {
     justify-content: center;
     font-size: 1.5rem;
     font-weight: 700;
-    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
 }
 
-.method-card h4 {
+.method-block h3 {
     font-size: 1.4rem;
     color: var(--text-primary);
-    margin: 1rem 0 0.5rem;
+    margin: 1.5rem 0 1rem;
 }
 
-.method-card > p {
+.method-block > p {
     color: var(--text-secondary);
     margin-bottom: 1rem;
 }
 
-.method-example {
-    background: var(--quote-bg);
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 1rem;
-    font-size: 0.95rem;
-    border-left: 3px solid var(--accent-highlight);
+.method-block ul {
+    list-style: none;
 }
 
-.method-example strong {
+.method-block ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.method-block ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+/* Memory Techniques */
+.memory-techniques {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.technique-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
+    transition: var(--transition);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.technique-card:hover {
+    border-color: var(--accent-highlight);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px var(--shadow);
+}
+
+.tech-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.technique-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.technique-card > p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.example-box {
+    background: var(--quote-bg);
+    border-left: 4px solid var(--accent-highlight);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.example-box strong {
     color: var(--accent-highlight);
+}
+
+/* Learning Roadmap */
+.learning-roadmap {
+    max-width: 900px;
+    margin: 2rem auto;
 }
 
 /* ==================== EXAMPLE HIGHLIGHT ==================== */
@@ -819,25 +956,99 @@ body.dark-mode .navbar {
 
 /* ==================== FOOTER ==================== */
 .footer {
-    background: var(--bg-secondary);
-    padding: var(--spacing-md);
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    padding: var(--spacing-lg) 0 var(--spacing-md);
     text-align: center;
+    border-top: 2px solid var(--border-color);
+    margin-top: var(--spacing-lg);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section p,
+.footer-section li {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-links a:hover {
+    color: var(--accent-highlight);
+    transform: translateX(5px);
+}
+
+.footer-links a::before {
+    content: '→';
+    font-size: 0.9rem;
+}
+
+.footer-bottom {
+    padding-top: 2rem;
     border-top: 1px solid var(--border-color);
 }
 
-.footer p {
+.footer-bottom p {
     color: var(--text-secondary);
     margin-bottom: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .footer-note {
     font-style: italic;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 1rem;
 }
 
 .footer-date {
     font-weight: 600;
     color: var(--accent-highlight);
+}
+
+.footer-credits {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.footer-credits strong {
+    color: var(--text-primary);
 }
 
 /* ==================== REVEAL ANIMATIONS ==================== */
@@ -945,42 +1156,83 @@ body.dark-mode .navbar {
 
 .dropdown-toggle {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.dropdown-toggle:hover {
+    color: var(--accent-highlight);
 }
 
 .dropdown-menu {
-    display: none;
+    display: block;
     position: absolute;
     top: 100%;
     left: 0;
     background: var(--card-bg);
-    box-shadow: 0 4px 12px var(--shadow);
-    border-radius: 8px;
+    box-shadow: 0 8px 24px var(--shadow);
+    border-radius: 12px;
     padding: 0.5rem 0;
-    min-width: 220px;
+    min-width: 240px;
     z-index: 1000;
     list-style: none;
+    border: 1px solid var(--border-color);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    visibility: hidden;
 }
 
 .dropdown:hover .dropdown-menu {
-    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    visibility: visible;
 }
 
 .dropdown-menu li {
     padding: 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
 }
 
 .dropdown-menu a {
     display: block;
-    padding: 0.75rem 1.5rem;
+    padding: 0.85rem 1.5rem;
     color: var(--text-primary);
     text-decoration: none;
     transition: var(--transition);
+    position: relative;
 }
 
-.dropdown-menu a:hover,
+.dropdown-menu a::before {
+    content: '→';
+    position: absolute;
+    left: 1rem;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.dropdown-menu a:hover::before {
+    opacity: 1;
+    left: 0.5rem;
+}
+
+.dropdown-menu a:hover {
+    background: linear-gradient(90deg, var(--accent-highlight) 0%, rgba(52, 152, 219, 0.8) 100%);
+    color: white;
+    padding-left: 2rem;
+}
+
 .dropdown-menu a.active {
     background: var(--accent-highlight);
     color: white;
+    font-weight: 600;
 }
 
 /* ==================== CHAPTER NAVIGATION ==================== */
@@ -1028,7 +1280,8 @@ body.dark-mode .navbar {
 .page-header {
     background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
     color: white;
-    padding: 6rem 0 4rem;
+    padding: 8rem 0 4rem;
+    margin-top: 70px;
     text-align: center;
 }
 
@@ -1355,13 +1608,15 @@ body.dark-mode .navbar {
 
 /* ==================== HERO SECTION ==================== */
 .hero-section {
-    min-height: 90vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
     color: white;
     text-align: center;
+    padding: 6rem 0;
+    margin-top: 70px;
 }
 
 .hero-title {
@@ -1390,7 +1645,100 @@ body.dark-mode .navbar {
     flex-wrap: wrap;
 }
 
-/* ==================== QUICK LINKS GRID ==================== */
+/* ==================== MAIN CONTENT GRID (3 COLUMNS) ==================== */
+.main-content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.content-column {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px var(--shadow);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.content-column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px var(--shadow);
+    border-color: var(--accent-highlight);
+}
+
+.column-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.column-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.column-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.column-desc {
+    color: var(--text-secondary);
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.column-links {
+    list-style: none;
+}
+
+.column-links li {
+    margin-bottom: 1rem;
+}
+
+.column-links a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: var(--transition);
+    background: var(--bg-primary);
+    border-left: 3px solid transparent;
+}
+
+.column-links a::before {
+    content: '→';
+    margin-right: 0.75rem;
+    color: var(--accent-highlight);
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.column-links a:hover {
+    background: var(--accent-highlight);
+    color: white;
+    border-left-color: var(--accent-secondary);
+    padding-left: 1.5rem;
+}
+
+.column-links a:hover::before {
+    color: white;
+    transform: translateX(5px);
+}
+
+/* ==================== QUICK LINKS GRID (OLD - KEEP FOR OTHER PAGES) ==================== */
 .quick-links-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1430,7 +1778,106 @@ body.dark-mode .navbar {
 }
 
 /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+@media (max-width: 1024px) {
+    .nav-menu {
+        gap: 1.5rem;
+    }
+    
+    .nav-menu a {
+        font-size: 0.9rem;
+    }
+    
+    .footer-top {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-content-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .main-content-grid .content-column:last-child {
+        grid-column: 1 / -1;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 768px) {
+    .main-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .main-content-grid .content-column:last-child {
+        grid-column: auto;
+        max-width: none;
+    }
+
+    .mistakes-grid,
+    .correct-methods,
+    .memory-techniques {
+        grid-template-columns: 1fr;
+    }
+
+    html {
+        font-size: 14px;
+    }
+    
+    .navbar {
+        padding: 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .nav-brand {
+        font-size: 1.2rem;
+        order: 1;
+    }
+    
+    .dark-mode-toggle {
+        order: 2;
+        margin-left: auto;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .nav-menu {
+        order: 3;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: var(--bg-secondary);
+        padding: 2rem;
+        gap: 1rem;
+        transition: left 0.3s ease;
+        box-shadow: 0 8px 24px var(--shadow);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-menu a {
+        display: block;
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    .nav-menu a::before {
+        display: none;
+    }
+    
     .page-title {
         font-size: 2.5rem;
     }
@@ -1443,6 +1890,16 @@ body.dark-mode .navbar {
         font-size: 1.8rem;
     }
     
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
     .chapter-nav {
         bottom: 1rem;
         padding: 0.75rem 1.5rem;
@@ -1450,15 +1907,89 @@ body.dark-mode .navbar {
     }
     
     .dropdown-menu {
-        position: relative;
+        position: static;
+        display: none;
         box-shadow: none;
+        margin-top: 0.5rem;
+        border: none;
+        background: var(--bg-primary);
+    }
+    
+    .dropdown:hover .dropdown-menu,
+    .dropdown.active .dropdown-menu {
+        display: block;
+        opacity: 1;
+        transform: none;
     }
     
     .progress-stats {
         gap: 1.5rem;
+        flex-wrap: wrap;
     }
     
     .stat-number {
         font-size: 2rem;
+    }
+    
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-links a::before {
+        display: none;
+    }
+    
+    .section {
+        padding: var(--spacing-md) 0;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.75rem;
+        gap: 0.75rem;
+    }
+    
+    .nav-brand {
+        font-size: 1rem;
+    }
+    
+    .dark-mode-toggle {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .quick-links-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .problem-cards {
+        grid-template-columns: 1fr;
     }
 }
