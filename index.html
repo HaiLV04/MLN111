@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Học Triết Hiệu Quả</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">Học Triết Hiệu Quả</div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="active">Trang chủ</a></li>
+            <li><a href="pages/intro.html">Giới thiệu</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Nội dung ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="chapters/chuong1.html">Chương 1: Khái quát</a></li>
+                    <li><a href="chapters/chuong2.html">Chương 2: Vật chất & Ý thức</a></li>
+                    <li><a href="chapters/chuong3.html">Chương 3: Phép biện chứng</a></li>
+                    <li><a href="chapters/chuong4.html">Chương 4: Lý luận nhận thức</a></li>
+                </ul>
+            </li>
+            <li><a href="pages/methods.html">Phương pháp học</a></li>
+            <li><a href="pages/exam-tips.html">Làm bài</a></li>
+            <li><a href="pages/case-studies.html">Ví dụ</a></li>
+            <li><a href="pages/review.html">Ôn tập</a></li>
+            <li><a href="pages/conclusion.html">Kết luận</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section hero-section">
+        <div class="container">
+            <div class="hero-content reveal">
+                <h1 class="hero-title">Học Triết không khó</h1>
+                <h2 class="hero-subtitle">khó vì học sai cách</h2>
+                <p class="hero-description">Dự án hướng dẫn học môn Triết học Mác-Lênin hiệu quả, đạt điểm cao qua ví dụ thực tiễn</p>
+                <div class="hero-buttons">
+                    <a href="pages/intro.html" class="btn btn-primary">Bắt đầu học</a>
+                    <a href="pages/review.html" class="btn btn-secondary">Câu hỏi ôn tập</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Statement Section -->
+    <section class="section problem-section">
+        <div class="container">
+            <h2 class="section-title reveal">Vì sao nhiều sinh viên sợ môn Triết?</h2>
+            <div class="problem-cards">
+                <div class="problem-card reveal">
+                    <div class="problem-icon">📚</div>
+                    <h3>Quá nhiều khái niệm</h3>
+                    <p>Hàng trăm thuật ngữ như "duy vật biện chứng", "lượng-chất-chất-lượng"...</p>
+                </div>
+                <div class="problem-card reveal">
+                    <div class="problem-icon">🤯</div>
+                    <h3>Trừu tượng khó hiểu</h3>
+                    <p>Lý thuyết xa rời thực tế, khó liên hệ với đời sống hàng ngày</p>
+                </div>
+                <div class="problem-card reveal">
+                    <div class="problem-icon">❌</div>
+                    <h3>Học vẹt không hiểu</h3>
+                    <p>Chỉ thuộc công thức, nhưng không biết áp dụng vào bài thi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Questions Section -->
+    <section class="section questions-section">
+        <div class="container">
+            <h2 class="section-title reveal">Những câu hỏi chúng ta cần trả lời</h2>
+            <div class="questions-grid">
+                <div class="question-card reveal">
+                    <span class="question-number">1</span>
+                    <h3>Triết học thực sự là gì?</h3>
+                    <p>Không chỉ là lý thuyết khô khan mà là cách nhìn nhận thế giới</p>
+                </div>
+                <div class="question-card reveal">
+                    <span class="question-number">2</span>
+                    <h3>Học như thế nào cho hiệu quả?</h3>
+                    <p>Phương pháp khoa học để ghi nhớ và vận dụng kiến thức</p>
+                </div>
+                <div class="question-card reveal">
+                    <span class="question-number">3</span>
+                    <h3>Làm bài thi ra sao để đạt điểm cao?</h3>
+                    <p>Cấu trúc bài làm, cách trình bày, lỗi cần tránh</p>
+                </div>
+                <div class="question-card reveal">
+                    <span class="question-number">4</span>
+                    <h3>Ứng dụng vào thực tiễn?</h3>
+                    <p>Liên hệ Triết học với cuộc sống sinh viên hàng ngày</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Section -->
+    <section class="section message-section">
+        <div class="container">
+            <div class="message-box reveal">
+                <div class="message-icon">💡</div>
+                <h2>Thông điệp của dự án</h2>
+                <blockquote class="main-message">
+                    "Triết học không phải để học thuộc lòng, mà là để hiểu và áp dụng vào cuộc sống. 
+                    Khi bạn hiểu đúng bản chất, điểm số cao chỉ là kết quả tất yếu."
+                </blockquote>
+                <p class="message-description">
+                    Dự án này sẽ giúp bạn:<br>
+                    ✓ Hiểu rõ bản chất các khái niệm triết học<br>
+                    ✓ Nắm vững phương pháp học hiệu quả<br>
+                    ✓ Biết cách làm bài đạt điểm cao<br>
+                    ✓ Áp dụng Triết học vào thực tiễn
+                </p>
+                <a href="pages/intro.html" class="btn btn-primary">Khám phá ngay</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="section quick-links-section">
+        <div class="container">
+            <h2 class="section-title reveal">Nội dung chính</h2>
+            <div class="quick-links-grid">
+                <a href="pages/intro.html" class="quick-link-card reveal">
+                    <div class="link-icon">🎯</div>
+                    <h3>Giới thiệu</h3>
+                    <p>Lý do và mục tiêu dự án</p>
+                </a>
+                <a href="chapters/chuong1.html" class="quick-link-card reveal">
+                    <div class="link-icon">📖</div>
+                    <h3>Nội dung Triết học</h3>
+                    <p>4 chương theo giáo trình</p>
+                </a>
+                <a href="pages/methods.html" class="quick-link-card reveal">
+                    <div class="link-icon">🧠</div>
+                    <h3>Phương pháp học</h3>
+                    <p>Cách học đúng và hiệu quả</p>
+                </a>
+                <a href="pages/exam-tips.html" class="quick-link-card reveal">
+                    <div class="link-icon">✍️</div>
+                    <h3>Làm bài & Điểm cao</h3>
+                    <p>Cấu trúc bài thi chuẩn</p>
+                </a>
+                <a href="pages/case-studies.html" class="quick-link-card reveal">
+                    <div class="link-icon">💼</div>
+                    <h3>Ví dụ thực tiễn</h3>
+                    <p>4 case study chi tiết</p>
+                </a>
+                <a href="pages/review.html" class="quick-link-card reveal highlight">
+                    <div class="link-icon">❓</div>
+                    <h3>Câu hỏi ôn tập</h3>
+                    <p>Ôn theo chương với checklist</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 MLN111 - Dự án Triết học. Được thực hiện với ❤️</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
