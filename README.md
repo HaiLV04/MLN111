@@ -1,5 +1,11 @@
 # 🎓 Học Triết không khó - khó vì học sai cách
 
+## 📢 THÔNG BÁO: PHASE 1 ĐÃ HOÀN THÀNH 100% ✅
+
+**Cập nhật:** Tất cả 4 chương lý thuyết cốt lõi đã được hoàn thiện!
+
+---
+
 ## Giới thiệu dự án
 
 Đây là dự án website sáng tạo cho môn **Triết học Mác-Lênin (MLN111)** với chủ đề:
@@ -16,15 +22,104 @@ Website này không chỉ là một trang web hướng dẫn học tập thông 
 
 ---
 
-## 📂 Cấu trúc Project
+## 📂 Cấu trúc Project (CẬP NHẬT)
 
 ```
 MLN111/
-├── index.html          # File HTML chính chứa toàn bộ nội dung
-├── styles.css          # File CSS với dark mode và responsive design
-├── script.js           # JavaScript cho animations và tương tác
-└── README.md          # File hướng dẫn này
+├── index.html                    # Trang chủ - Đặt vấn đề ✅
+├── styles.css                    # CSS chính cho toàn bộ website ✅
+├── script.js                     # JavaScript chính (dark mode, animations) ✅
+├── review.js                     # JavaScript cho trang ôn tập ✅
+├── README.md                     # File hướng dẫn này ✅
+├── NAVIGATION.md                 # Hướng dẫn điều hướng chi tiết ✅
+│
+├── pages/                        # Các trang chính
+│   ├── intro.html               # Giới thiệu dự án ✅
+│   ├── review.html              # ⭐ Câu hỏi ôn tập (có tracking) ✅
+│   ├── methods.html             # Phương pháp học (Phase 2)
+│   ├── exam-tips.html           # Làm bài & Điểm cao (Phase 2)
+│   ├── case-studies.html        # Ví dụ thực tiễn (Phase 2)
+│   └── conclusion.html          # Kết luận (Phase 2)
+│
+├── chapters/                     # ⭐ 4 CHƯƠNG ĐÃ HOÀN THÀNH
+│   ├── chuong1.html             # Chương 1: Khái quát về Triết học ✅
+│   ├── chuong2.html             # Chương 2: Vật chất & Ý thức ✅
+│   ├── chuong3.html             # Chương 3: Phép biện chứng ✅
+│   └── chuong4.html             # Chương 4: Lý luận nhận thức ✅
+│
+└── text/
+    └── giaotrinh.txt            # Giáo trình gốc (496 trang)
 ```
+
+---
+
+## 🎯 TRẠNG THÁI DỰ ÁN
+
+### ✅ **PHASE 1: NỘI DUNG LÝ THUYẾT (HOÀN THÀNH 100%)**
+
+**Chương 1 - Khái quát về Triết học:**
+- ✅ Khái niệm cốt lõi (Triết học, vấn đề cơ bản, chủ nghĩa duy vật)
+- ✅ Sơ đồ tư duy (mindmap + bảng so sánh)
+- ✅ 3 ví dụ minh họa
+- ✅ 2 câu hỏi thực hành có gợi ý
+
+**Chương 2 - Vật chất & Ý thức:**
+- ✅ Khái niệm Vật chất, Ý thức, Mối quan hệ
+- ✅ **BỔ SUNG MỚI:** Không gian và Thời gian (87 dòng)
+  - Khái niệm, đặc điểm
+  - Bảng so sánh chi tiết
+  - 3 ví dụ thực tiễn (Giao hàng, Deadline, Du lịch)
+- ✅ Sơ đồ quan hệ + Ví dụ thực tế
+
+**Chương 3 - Phép biện chứng:**
+- ✅ 3 Quy luật cơ bản (Lượng-Chất, Đối lập, Phủ định)
+- ✅ **BỔ SUNG MỚI:** 6 Cặp phạm trù (~300 dòng)
+  1. Nguyên nhân - Kết quả
+  2. Tất nhiên - Ngẫu nhiên
+  3. Khả năng - Hiện thực
+  4. Nội dung - Hình thức
+  5. Bản chất - Hiện tượng
+  6. Cái chung - Cái riêng
+- ✅ **BỔ SUNG MỚI:** Nguyên lý sự phát triển (~200 dòng)
+  - Khái niệm, đặc điểm
+  - Xu hướng vận động (tiến lên, lùi lại, tự phát, tự giác)
+  - Ví dụ đa dạng
+
+**Chương 4 - Lý luận nhận thức (MỚI HOÀN THÀNH ~1300+ dòng):**
+- ✅ Lý luận nhận thức duy vật biện chứng
+  - Quan niệm lịch sử (duy tâm, duy vật trước Mác, Mác-Lênin)
+- ✅ Nguồn gốc và Bản chất nhận thức
+- ✅ **Thực tiễn và 4 vai trò** (Cực kỳ quan trọng):
+  - 🟡 Vai trò 1: Cơ sở, nguồn gốc
+  - 🔵 Vai trò 2: Động lực phát triển
+  - 🟢 Vai trò 3: Tiêu chuẩn chân lý
+  - 🔴 Vai trò 4: Mục đích nhận thức
+- ✅ **Con đường nhận thức của V.I. Lênin:**
+  - Trực quan sinh động → Tư duy trừu tượng → Thực tiễn
+  - Sơ đồ 3 bước có màu sắc
+  - Giải thích chi tiết + Ví dụ đầy đủ
+- ✅ **Chân lý - 4 tính chất:**
+  - 🔵 Tính khách quan
+  - 🟡 Tính tương đối
+  - 🟢 Tính tuyệt đối
+  - 🌸 Tính cụ thể
+  - Mối quan hệ Tương đối ⊂ Tuyệt đối
+- ✅ 4 ví dụ minh họa thực tế
+- ✅ 4 câu hỏi thực hành có gợi ý chi tiết
+
+**Tổng kết Phase 1:**
+- 📊 **Tổng dung lượng:** ~6000+ dòng HTML/CSS/JS
+- 🎨 **Color-coded boxes:** Phân loại kiến thức theo màu sắc
+- 📐 **Diagrams & Tables:** Hơn 20 sơ đồ và bảng
+- 📝 **Ví dụ thực tế:** Hơn 30 ví dụ liên hệ cuộc sống
+- ❓ **Câu hỏi thực hành:** 12+ câu có gợi ý đầy đủ
+
+### 🔄 **PHASE 2: TRANG HỖ TRỢ HỌC TẬP (KẾ HOẠCH)**
+- [ ] methods.html - Phương pháp học Triết hiệu quả
+- [ ] exam-tips.html - Cách làm bài đạt điểm cao
+- [ ] case-studies.html - 4 Case study thực tiễn
+- [ ] conclusion.html - Kết luận và thông điệp
+- [ ] Bổ sung Chương 4 vào review.html
 
 ---
 
@@ -32,8 +127,8 @@ MLN111/
 
 ### Phương án 1: Mở trực tiếp (Đơn giản nhất)
 
-1. Mở Windows Explorer
-2. Tìm đến thư mục `H:\SE 8\MLN111\Project\MLN111`
+1. Mở File Explorer
+2. Tìm đến thư mục dự án MLN111
 3. **Double-click** vào file `index.html`
 4. Website sẽ tự động mở trên trình duyệt mặc định
 
@@ -47,8 +142,8 @@ MLN111/
 
 ### Phương án 3: Dùng Python HTTP Server
 
-```powershell
-cd "H:\SE 8\MLN111\Project\MLN111"
+```bash
+cd đường/dẫn/đến/MLN111
 python -m http.server 8000
 ```
 
@@ -62,36 +157,47 @@ Sau đó mở trình duyệt và truy cập: `http://localhost:8000`
 
 - ✨ **Dark Mode**: Chế độ tối/sáng có thể chuyển đổi (nút góc trên bên phải)
 - 📱 **Responsive Design**: Hoạt động tốt trên mọi thiết bị (desktop, tablet, mobile)
-- 🎭 **Scroll Storytelling**: Nội dung hiện ra dần khi cuộn trang
-- 🌈 **Smooth Animations**: Hiệu ứng mượt mà, chuyên nghiệp
+- 🎭 **Scroll Animations**: Nội dung hiện ra dần khi cuộn trang (reveal on scroll)
+- 🌈 **Color-coded Boxes**: Phân loại kiến thức theo màu sắc (vàng, xanh, đỏ, hồng...)
+- 🔽 **Dropdown Menu**: Menu chương học thu gọn, gọn gàng
+- 📖 **Accordion**: Câu hỏi ôn tập mở/đóng dễ dàng
 
-### 📚 Nội dung (6 phần chính)
+### 📚 Nội dung chính
 
-#### 1. **Mở đầu - Vấn đề thực tiễn**
-   - Phân tích lý do sinh viên sợ môn Triết
-   - Đặt câu hỏi triết: "Vấn đề nằm ở đâu?"
+#### 1. **Trang chủ (index.html)**
+   - Hero section với tiêu đề chính
+   - Phân tích vấn đề sinh viên sợ Triết (3 cards)
+   - Câu hỏi gợi mở (4 câu hỏi)
+   - Thông điệp chính
+   - Quick links đến các phần
 
-#### 2. **Bản chất của việc học Triết**
-   - Bảng so sánh nguyên lý Triết học và cách áp dụng
-   - Highlight: Vật chất - Ý thức, Thực tiễn - Nhận thức, Biện chứng
+#### 2. **Giới thiệu (pages/intro.html)**
+   - Lý do chọn đề tài
+   - Mục tiêu học tập (4 goals)
+   - Ý nghĩa thực tiễn
+   - Triết học của chính dự án
 
-#### 3. **Học Triết sao cho dễ hiểu?**
-   - ❌ Sai lầm phổ biến (học thuộc, chép slide, không liên hệ...)
-   - ✅ Cách học đúng (4 phương pháp với ví dụ cụ thể)
+#### 3. **Chương 1-4 (chapters/)**
+   - Khái niệm cốt lõi
+   - Ý chính quan trọng
+   - Sơ đồ tư duy (diagrams, tables, mindmaps)
+   - Ví dụ minh họa thực tế
+   - Câu hỏi thực hành có gợi ý
+   - Tóm tắt chương
+   - Chapter navigation (← Chương trước | Số/Tổng | Chương sau →)
 
-#### 4. **Cách làm bài đạt điểm cao**
-   - Timeline 4 bước: Nêu khái niệm → Giải thích → Liên hệ thực tiễn → Rút ra ý nghĩa
-   - Bí quyết ăn điểm từ giảng viên
+#### 4. **Ôn tập (pages/review.html) ⭐**
+   - **Progress tracking:** Theo dõi số câu đã ôn (lưu localStorage)
+   - **Accordion:** Click mở/đóng câu hỏi
+   - **Checkbox:** Đánh dấu ✓ khi ôn xong
+   - **Organized by chapter:** Chia theo từng chương
+   - Mỗi câu có: Dàn ý chi tiết, gợi ý trả lời, ví dụ, key points
 
-#### 5. **Ví dụ thực tế (Case Studies)**
-   - 📱 Case 1: Nghiện mạng xã hội
-   - ⏰ Case 2: Học dồn trước kỳ thi
-   - 🤖 Case 3: AI và học tập
-   - 🎯 Case 4: Áp lực điểm số
-
-#### 6. **Thông điệp kết**
-   - Quote triết học hay
-   - Lời kết đầy cảm hứng
+#### 5. **Các trang Phase 2 (đang lên kế hoạch)**
+   - methods.html: Phương pháp học hiệu quả
+   - exam-tips.html: Cách làm bài đạt điểm cao
+   - case-studies.html: 4 Case study thực tiễn
+   - conclusion.html: Kết luận và thông điệp
 
 ---
 
